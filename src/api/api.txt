@@ -1,0 +1,69 @@
+设备总数：https://qk.guizhougas.cn/inventory/managedObjects?pageSize=1&query=$filter=(type eq 'c8y_meter')&withTotalPages=true
+
+当天抄表数：https://qk.guizhougas.cn/inventory/managedObjects?pageSize=1&query=$filter=(LastDataPoint.ms ge 1552924800000)&withTotalPages=true  //时间为当天0点
+
+本月抄表数：https://qk.guizhougas.cn/inventory/managedObjects?pageSize=1&query=$filter=((LastDataPoint.ms ge 1550592000000) and (LastDataPoint.ms lt 1552924800000))&withTotalPages=true  //时间为上个月20日到现在
+
+当天成功率：当天抄表数/设备总数
+
+本月成功率：当月抄表数/设备总数
+
+抄标率1：https://qk.guizhougas.cn/inventory/managedObjects?type=c8y_meterRate  //取第一条的ID
+抄标率2：https://qk.guizhougas.cn/measurement/measurements/series?dateFrom=2019-03-12T00:00:00%2B08:00&dateTo=2019-03-19T23:59:59%2B08:00&pageSize=1440&revert=true&series=c8y_meterRate.meterRate&source=67519455  //source为上一条请求返回的ID  时间为昨天23:59:59往前推7天0点
+
+当日手动开关阀次数：https://qk.guizhougas.cn/devicecontrol/operations?currentPage=1&dateFrom=2019-03-19T00:00:00%2B08:00&dateTo=2019-03-19T23:59:59%2B08:00&fragmentType=ValveOpen&pageSize=1&revert=true&withTotalPages=true  //时间为今天0点到今天23:59:59
+
+当日表具自动关阀数：https://qk.guizhougas.cn/event/events?currentPage=1&dateFrom=2019-03-19T00:00:00%2B08:00&dateTo=2019-03-19T23:59:59%2B08:00&fragmentType=ValveClose&pageSize=1&type=c8y_ValveStatusUpdate&withTotalPages=true  //时间为今天0点到今天23:59:59
+
+当日表具自动开阀数：https://qk.guizhougas.cn/event/events?currentPage=1&dateFrom=2019-03-19T00:00:00%2B08:00&dateTo=2019-03-19T23:59:59%2B08:00&fragmentType=ValveOpen&pageSize=1&type=c8y_ValveStatusUpdate&withTotalPages=true  //时间为今天0点到今天23:59:59
+
+关阀状态：https://qk.guizhougas.cn/inventory/managedObjects?pageSize=1&query=$filter=((SSA_TYPE eq 1) and (MSP.Bit6 eq '1'))&withTotalPages=true
+
+开阀状态：https://qk.guizhougas.cn/inventory/managedObjects?pageSize=1&query=$filter=((SSA_TYPE eq 1) and (MSP.Bit5 eq '1'))&withTotalPages=true
+
+lora总数：https://qk.guizhougas.cn/inventory/managedObjects?pageSize=1&query=$filter=(SSA_TYPE eq 1)&withTotalPages=true
+
+未知状态：lora总数-关闭状态-开启状态
+
+有线数量：https://qk.guizhougas.cn/inventory/managedObjects?pageSize=1&query=$filter=(SSA_TYPE eq 0)&withTotalPages=true
+
+无线数量：设备总数-有线数量
+
+有线表具-小区管理机总数：https://qk.guizhougas.cn/inventory/managedObjects?pageSize=1&query=$filter=(type eq 'c8y_Manager')&withTotalPages=true
+
+有线表具-小区管理机在线数：https://qk.guizhougas.cn/inventory/managedObjects?pageSize=1&query=$filter=((type eq 'c8y_Manager') and (c8y_Availability.status eq 'AVAILABLE'))&withTotalPages=true
+
+有线表具-小区管理机不在数：https://qk.guizhougas.cn/inventory/managedObjects?pageSize=1&query=$filter=((type eq 'c8y_Manager') and (c8y_Availability.status eq 'UNAVAILABLE'))&withTotalPages=true
+
+有线表具-集中器数：https://qk.guizhougas.cn/inventory/managedObjects?pageSize=1&query=$filter=(type eq 'c8y_Collector')&withTotalPages=true
+
+有线表具-表具数：有线数量
+
+无线表具-按协议统计：https://qk.guizhougas.cn/inventory/managedObjects?pageSize=1&query=$filter=(SSA_TYPE eq 1)&withTotalPages=true
+无线表具-按协议统计：https://qk.guizhougas.cn/inventory/managedObjects?pageSize=1&query=$filter=(SSA_TYPE eq 2)&withTotalPages=true
+无线表具-按协议统计：https://qk.guizhougas.cn/inventory/managedObjects?pageSize=1&query=$filter=(SSA_TYPE eq 3)&withTotalPages=true
+
+无线表具-按厂家统计：https://qk.guizhougas.cn/inventory2/managedObjects/aggaragate/count?groupBy=CIS.MFG_CD&query=$filter=((type eq 'c8y_meter') and (not(SSA_TYPE eq 0)))
+
+CIS已同步数：https://qk.guizhougas.cn/inventory/managedObjects?pageSize=1&query=$filter=((type eq 'c8y_meter') and (has(CIS.SP_ID)))&withTotalPages=true
+
+CIS未同步数：https://qk.guizhougas.cn/inventory/managedObjects?pageSize=1&query=$filter=((type eq 'c8y_meter') and (not(has(CIS.SP_ID))))&withTotalPages=true
+
+由于贵燃同步到CIS平台是每月的20号
+
+如果当月有值得话，说明查询时间是在20号-月底之前，上月上传成功数查询-----上月20-本月20号的数据
+如果当月没有值，说明查询时间是在1号-20号之前，上月上传成功数查询--------上上月20-上月20号的数据
+
+
+上月同步成功数：https://qk.guizhougas.cn/measurement/measurements?dateFrom=2019-03-01T00:00:00%2B08:00&dateTo=2019-03-31T23:59:59%2B08:00&fragmentType=success&pageSize=1&revert=true&type=c8y_Acc_finish&withTotalPages=true //时间为上述
+
+https://qk.guizhougas.cn/measurement/measurements?dateFrom=2019-03-01T00:00:00%2B08:00&dateTo=2019-03-31T23:59:59%2B08:00&fragmentType=failed&nocache=22707816586315355&pageSize=1&revert=true&type=c8y_Acc_finish&withTotalPages=true
+
+
+上月同步失败数：https://qk.guizhougas.cn/measurement/measurements?dateFrom=2019-03-01T00:00:00%2B08:00&dateTo=2019-03-31T23:59:59%2B08:00&fragmentType=failed&pageSize=1&revert=true&type=c8y_Acc_finish&withTotalPages=true  //时间为上述
+
+最新动态：https://qk.guizhougas.cn/audit/auditRecords?dateFrom=1970-01-01&dateTo=2019-03-20&pageSize=100&revert=true&withTotalPages=true   reltime  //时间为1970-01-01到现在
+
+租户：qk
+用户名：gzgasqk
+密码：gzgas20!8

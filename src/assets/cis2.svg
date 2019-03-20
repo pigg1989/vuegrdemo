@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="212px" height="56px" viewBox="0 0 212 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.1 (72631) - https://sketchapp.com -->
+    <title>分组 21</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="78.8858818%" y1="7.72723619%" x2="26.6756683%" y2="88.7232354%" id="linearGradient-1">
+            <stop stop-color="#0BD1FF" offset="0%"></stop>
+            <stop stop-color="#3797FF" offset="100%"></stop>
+        </linearGradient>
+        <polygon id="path-2" points="1.97203207e-16 0.5 62 0.5 62 43.5 1.97203207e-16 43.5"></polygon>
+        <linearGradient x1="73.5587782%" y1="31.474594%" x2="19.3157159%" y2="71.7296405%" id="linearGradient-4">
+            <stop stop-color="#D7E6F5" offset="0%"></stop>
+            <stop stop-color="#B2CCEA" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="北秦" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="贵燃1" transform="translate(-1065.000000, -245.000000)">
+            <g id="分组-23" transform="translate(1029.000000, 245.000000)">
+                <g id="分组-21" transform="translate(37.000000, 1.000000)">
+                    <g id="分组-19-copy" transform="translate(95.000000, 27.000000) scale(-1, 1) translate(-95.000000, -27.000000) translate(74.000000, 24.000000)">
+                        <circle id="椭圆形" fill="#314358" cx="3" cy="3" r="3"></circle>
+                        <circle id="椭圆形-copy-7" fill="#4C77A9" cx="21" cy="3" r="3"></circle>
+                        <circle id="椭圆形-copy-13" fill="#3895FF" cx="39" cy="3" r="3"></circle>
+                    </g>
+                    <path d="M27,54 C41.9116882,54 54,41.9116882 54,27 C54,12.0883118 41.9116882,0 27,0 C12.0883118,0 0,12.0883118 0,27 C0,41.9116882 12.0883118,54 27,54 Z" id="椭圆形-copy-16" stroke="#0DCEFF" stroke-dasharray="3,2"></path>
+                    <circle id="椭圆形-copy-17" fill="url(#linearGradient-1)" cx="27" cy="27" r="22"></circle>
+                    <text id="CIS-Copy" font-family="PingFangSC-Semibold, PingFang SC" font-size="18" font-weight="500" fill="#00111C">
+                        <tspan x="12.24" y="34">CIS</tspan>
+                    </text>
+                    <g id="yun_f-copy" transform="translate(149.000000, 5.000000)">
+                        <mask id="mask-3" fill="white">
+                            <use xlink:href="#path-2"></use>
+                        </mask>
+                        <g id="Clip-2"></g>
+                        <path d="M50.6665782,18.5901593 C50.6706502,18.4098871 50.6905772,18.2337918 50.6905772,18.0524754 C50.6905772,8.35954544 43.5188601,0.5 34.671198,0.5 C28.2964731,0.5 22.8080653,4.5905368 20.2291686,10.4958518 C19.1140379,9.88146435 17.8584654,9.52728025 16.5250044,9.52728025 C12.4333907,9.52728025 9.04433262,12.7883181 8.38197741,17.066057 C3.50922636,18.8975429 0,23.9503858 0,29.9120892 C0,37.4133686 5.54792884,43.4922157 12.3911108,43.5 L50.6905772,43.5 L50.6905772,43.4966774 C56.9424479,43.4614584 62,37.9020686 62,31.0445101 C62,24.1780281 56.9303185,18.610949 50.6665782,18.5901593 Z" id="Fill-1" fill="url(#linearGradient-4)" mask="url(#mask-3)"></path>
+                    </g>
+                    <text id="立子-copy" font-family="PingFangSC-Semibold, PingFang SC" font-size="16" font-weight="500" fill="#00111C">
+                        <tspan x="164" y="36">立子</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
