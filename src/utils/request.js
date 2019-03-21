@@ -8,7 +8,7 @@ if (!tcy8) {
 const serviceConfig = tcy8
   ? {
     baseURL: process.env.BASE_API,
-    timeout: 5000,
+    // timeout: 5000,
     headers: {
       'Content-Type': ' application/json',
       Accept: ' application/json',
@@ -17,7 +17,7 @@ const serviceConfig = tcy8
   }
   : {
     baseURL: process.env.BASE_API,
-    timeout: 5000,
+    // timeout: 5000,
     headers: {
       'Content-Type': ' application/json',
       Accept: ' application/json',
@@ -32,7 +32,7 @@ const service = axios.create(serviceConfig);
 service.interceptors.request.use(
   config => config,
   (error) => {
-    console.log(error);
+    // console.log(error);
     Promise.reject(error);
   },
 );
@@ -42,7 +42,7 @@ service.interceptors.response.use(
   response => response,
 
   (error) => {
-    console.log(`err${error}`);
+    // console.log(`err${error}`);
     Message({
       message: error.message,
       type: 'error',

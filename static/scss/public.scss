@@ -1,6 +1,6 @@
 
 $designWidth: 1366;
-$mainBgColor: #0D3872;
+// $mainBgColor: url('');
 @function px2rem($px){
 	@return $px*320/$designWidth/20 + rem;
 }

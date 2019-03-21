@@ -2,7 +2,7 @@
   <div id="app">
     <headermy/>
     <div class="main">
-      <div class="left">
+      <div class="left mr">
         <div class="left_up">
           <ammeter/>
         </div>
@@ -13,7 +13,7 @@
       <div class="middle">
         <middle/>
       </div>
-      <div class="right">
+      <div class="right ml">
         <div class="right_up">
           <cis/>
         </div>
@@ -51,17 +51,25 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.mr{
+  margin-right: px2rem(11);
+  margin-left: px2rem(18);
+}
+.ml{
+  margin-left: px2rem(11);
+  // margin-right: px2rem(18);
+}
 #app {
-  border: 1px solid red;
-  width: px2rem(1366);
+  // border: 1px solid red;
+  // width: px2rem(1366);
   box-sizing: border-box;
   height: auto;
-  background: $mainBgColor;
+  background: url("assets/dashboard_bg.png");
  
   // overflow: hidden;
 
   .main {
-    border: 1px solid #0f0;
+    // border: 1px solid #0f0;
     overflow: hidden;
     .left {
       height: auto;
@@ -69,7 +77,7 @@ export default {
       .left_up {
         width: px2rem(360);
         height: auto;
-        @include border;
+        // @include border;
         overflow: hidden;
       }
       .left_down{

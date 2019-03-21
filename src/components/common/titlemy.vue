@@ -16,7 +16,7 @@ export default {
         }
     },
     created(){
-        console.log('11111111',this.title);
+        // console.log('11111111',this.title);
     },
     methods:{}
 }

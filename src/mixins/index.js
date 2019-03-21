@@ -1,7 +1,7 @@
 import api from '@/api/apiAll';
 
 export default {
-  name: 'mixins', 
+  name: 'mixins',
   data() {
     return {
       deviceNumber: '',
@@ -14,15 +14,16 @@ export default {
   },
   methods: {
     getDeviceNumber() {
-      api.get('/inventory/managedObjects', {
-        query: '$filter=(type eq \'c8y_meter\')',
-        withTotalPages: true,
-        pageSize: 1,
-      }).then((res) => {
-       
-        this.deviceNumber = res.data.statistics.totalPages;
-      });
+      api
+        .get('/inventory/managedObjects', {
+          query: "$filter=(type eq 'c8y_meter')",
+          withTotalPages: true,
+          pageSize: 1,
+        })
+        .then((res) => {
+          this.deviceNumber = res.data.statistics.totalPages;
+          console.log(this.deviceNumber);
+        });
     },
   },
 };
-  
